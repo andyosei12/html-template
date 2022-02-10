@@ -121,24 +121,29 @@ button {
     .header {
       padding-inline: 0; } }
   .header__logo {
-    height: 5rem;
-    width: 7.7rem;
     display: flex;
     align-items: center; }
     @media (max-width: 37.5em) {
       .header__logo {
         padding-left: 1rem;
         margin-right: auto; } }
-    .header__logo img {
-      height: 100%;
-      width: 100%; }
+    .header__logo--image {
+      height: 5rem;
+      width: 3.5rem; }
+      .header__logo--image img {
+        width: 100%;
+        height: 100%; }
     .header__logo--name {
       font-size: 1.5rem;
       margin-left: 0.5rem;
-      color: #000b14;
+      color: rgba(0, 11, 20, 0.8);
       text-transform: uppercase;
       font-weight: 700;
-      letter-spacing: 3px; }
+      letter-spacing: 3px;
+      font-family: "Josefin Sans", sans-serif;
+      margin-top: 0.7rem; }
+      .header__logo--name span {
+        display: block; }
       @media (max-width: 56.25em) {
         .header__logo--name {
           font-size: 1.2rem; } }
@@ -242,7 +247,8 @@ button {
   background-color: #f69108; }
   @media (max-width: 37.5em) {
     .nav__list li .circle {
-      display: none; } }
+      display: none;
+      opacity: 0; } }
 
 @media (max-width: 37.5em) {
   .social__icons {
@@ -336,6 +342,7 @@ button {
         .home__container .featured__image {
           grid-column: 1 / -1; } }
       .home__container .featured__image img {
+        object-fit: cover;
         width: 115%;
         height: 100%; }
         @media (max-width: 37.5em) {

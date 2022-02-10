@@ -7,7 +7,7 @@
   "scripts": {
     "devserver": "lite-server",
     "watch:sass": "node-sass sass/main.scss css/styles.css -w",
-    "dev": "npm-run-all --parallel compile:sass devserver",
+    "dev": "npm-run-all --parallel watch:sass devserver",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/style.comp.css",
     "prefix:css": "postcss css/style.concat.css --use autoprefixer -o css/style.prefix.css",
