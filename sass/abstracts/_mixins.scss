@@ -1,0 +1,47 @@
+// Media queries
+// 0-600px = for phones
+// 600px-900px = for tablet portrait
+// 900px-1200px = for tablet landscape
+// 1200px-1800px = for desktop
+// 1800px + = for large desktop
+
+/*
+- Breakpoints
+- phone
+- tab-pot
+- tab-landscape
+- large-desktop
+*/
+
+// info: order of media queries by Jonas Schmedtmann;
+// * Base->typography->general layout->grid->page layout->components
+
+// Using ems for breakpoints
+// 1em = 16px
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == "phone") {
+    @media (max-width: 37.5em) {
+      // 37.5em = 600px
+      @content;
+    }
+  }
+  @if ($breakpoint == "tab-port") {
+    @media (max-width: 56.25em) {
+      // 56.25em = 900px
+      @content;
+    }
+  }
+  @if ($breakpoint == "tab-landscape") {
+    @media (max-width: 75em) {
+      // 75em = 1200px)
+      @content;
+    }
+  }
+  @if ($breakpoint == "large-desktop") {
+    @media (min-width: 112.5em) {
+      // 112.5em = 1800px)
+      @content;
+    }
+  }
+}

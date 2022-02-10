@@ -1,0 +1,19 @@
+//info: abstracts imports
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+//info: base imports
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+//info: components imports
+@import "./components/header";
+@import "./components/blog-summary";
+@import "./components/footer";
+
+//info: layouts imports
+@import "./layout/home";
+
+//info: pages imports
+@import "./pages/home";

@@ -1,0 +1,51 @@
+.footer {
+  background-color: $color-secondary-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 3rem;
+
+  &__logo {
+    height: 8rem;
+    width: 6rem;
+
+    & img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      font-size: 1.4rem;
+      list-style: none;
+      color: $color-black;
+
+      & li {
+        position: relative;
+      }
+
+      & li:not(:last-child) {
+        margin-right: 5rem;
+
+        @include respond(phone) {
+          margin-right: 3rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-black;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

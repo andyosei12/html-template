@@ -1,0 +1,186 @@
+.home__container {
+  display: grid;
+  grid-template-rows: repeat(5, min-content) 5rem;
+  grid-template-columns:
+    [full-start] minmax(3rem, 1fr) repeat(
+      10,
+      [col-start] minmax(min-content, 13rem) [col-end]
+    )
+    minmax(3rem, 1fr) [full-end];
+  column-gap: 1.5rem;
+  row-gap: 3rem;
+
+  .featured {
+    background-color: $color-secondary-light;
+    padding-block: 3.5rem;
+    grid-row: 1 / 2;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    @include respond(phone) {
+      background-color: transparent;
+      padding-block: 0;
+      padding-inline: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    &__image {
+      grid-column: 2 / 6;
+
+      @include respond(phone) {
+        grid-column: 1 / -1;
+      }
+
+      & img {
+        width: 115%;
+        height: 100%;
+
+        @include respond(phone) {
+          width: 100%;
+          height: 35vh;
+        }
+      }
+    }
+    &__text {
+      grid-column: 7 / 10;
+
+      @include respond(phone) {
+        grid-column: 1 / -1;
+      }
+      // align-self: center;
+
+      & p {
+        font-size: 1.3rem;
+        line-height: 1.5;
+
+        @include respond(phone) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &__tag {
+      text-transform: uppercase;
+      background-color: rgba(#fff, 0.45);
+      font-size: 1.3rem;
+      display: inline-block;
+      padding: 1rem;
+      color: rgba($color-gray, 0.8);
+
+      @include respond(phone) {
+        padding-inline: 0;
+      }
+    }
+
+    &__link {
+      display: inline-block;
+      color: $color-black;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: "Lato", sans-serif;
+      font-size: 1.35rem;
+      text-decoration: none;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      & span {
+        // font-size: 2rem;
+        color: $color-primary;
+      }
+    }
+  }
+
+  .entertainment {
+    grid-row: 3 / 4;
+    grid-column: col-start 1 / col-end 10;
+
+    @include respond(phone) {
+      grid-column: full-start / full-end;
+      padding: 1rem;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+
+      @include respond(phone) {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+
+    &__posts {
+      flex-basis: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 5rem;
+
+      @include respond(phone) {
+        column-gap: 3rem;
+      }
+
+      & div:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1 / 3;
+
+        @include respond(phone) {
+          grid-row: 1 / 2;
+        }
+      }
+    }
+
+    &__ad {
+      flex-basis: 15%;
+
+      @include respond(phone) {
+        flex-basis: 100%;
+        margin-top: 5rem;
+      }
+    }
+  }
+  .social {
+    grid-row: 4 / 5;
+    grid-column: col-start 1 / col-end 10;
+
+    @include respond(phone) {
+      grid-column: full-start / full-end;
+      padding: 1rem;
+    }
+  }
+
+  .ads {
+    grid-row: 5 / 6;
+    grid-column: col-start 3 / col-end 8;
+  }
+}
+
+.must-read {
+  grid-row: 2 / 3;
+  grid-column: col-start 1 / col-end 10;
+
+  @include respond(phone) {
+    grid-column: full-start / full-end;
+    padding: 1rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 5rem;
+
+    @include respond(phone) {
+      column-gap: 3rem;
+      row-gap: 5rem;
+    }
+  }
+}
