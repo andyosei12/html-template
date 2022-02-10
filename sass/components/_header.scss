@@ -11,8 +11,6 @@
   }
 
   &__logo {
-    height: 5rem;
-    width: 7.7rem;
     display: flex;
     align-items: center;
 
@@ -21,18 +19,29 @@
       margin-right: auto;
     }
 
-    & img {
-      height: 100%;
-      width: 100%;
+    &--image {
+      height: 5rem;
+      width: 3.5rem;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &--name {
       font-size: 1.5rem;
       margin-left: 0.5rem;
-      color: $color-black;
+      color: rgba($color-black, 0.8);
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 3px;
+      font-family: "Josefin Sans", sans-serif;
+      margin-top: 0.7rem;
+
+      & span {
+        display: block;
+      }
 
       @include respond(tab-port) {
         font-size: 1.2rem;
@@ -174,6 +183,7 @@
 
   @include respond(phone) {
     display: none;
+    opacity: 0;
   }
 }
 
