@@ -1,0 +1,93 @@
+.author-container {
+  padding-inline: 4rem;
+
+  @include respond(phone) {
+    padding-inline: 1rem;
+  }
+}
+
+.author__posts--header {
+  width: 30%;
+  display: grid;
+  grid-template-columns: max-content 0.5fr;
+  column-gap: 1rem;
+  align-items: center;
+  font-size: 1.5rem;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 0.3rem;
+    margin-top: 0.5rem;
+    background-color: $color-primary;
+  }
+}
+
+.author__name {
+  align-self: center;
+  color: $color-black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
+
+.author__profile {
+  p {
+    font-size: 1.3rem;
+    width: 35%;
+
+    @include respond(phone) {
+      width: 90%;
+      font-size: 1.8rem;
+      margin-bottom: 3rem !important;
+    }
+  }
+
+  &--social {
+    display: flex;
+
+    & h3 {
+      align-self: center;
+      color: $color-gray;
+
+      @include respond(phone) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.author__blogs {
+  flex-basis: 75%;
+}
+
+.author__blogs-container {
+  padding-inline: 0 !important;
+}
+
+.author__posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 5rem;
+
+  @include respond(phone) {
+    column-gap: 3rem;
+    row-gap: 5rem;
+  }
+}
+
+.author-social__icons {
+  & i {
+    @include respond(phone) {
+      margin-right: 1.5rem !important;
+    }
+  }
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
